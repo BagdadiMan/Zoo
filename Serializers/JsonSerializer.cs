@@ -53,18 +53,18 @@ namespace Zoo
         private string ParseDictionaryToJson(Dictionary<String, object> dictionaryToParse, int tabsCount)
         {
             StringBuilder parsedDictionary = new StringBuilder();
-            string outerTabs = new String('\t', tabsCount);
-            string innetTabs = new String('\t', tabsCount + 1);
+            string parenthesesTabs = new String('\t', tabsCount);
+            string bodyTabs = new String('\t', tabsCount + 1);
 
-            parsedDictionary.Append(outerTabs);
+            parsedDictionary.Append(parenthesesTabs);
             parsedDictionary.Append("{\n");
             foreach (KeyValuePair<string, object> entry in dictionaryToParse)
             {
-                parsedDictionary.Append(innetTabs);
+                parsedDictionary.Append(bodyTabs);
                 parsedDictionary.Append(String.Format("\"{0}\": {1}", entry.Key, ParseObjectToJsonValue(entry.Value, tabsCount)));
                 parsedDictionary.Append(",\n");
             }
-            parsedDictionary.Append(outerTabs);
+            parsedDictionary.Append(parenthesesTabs);
             parsedDictionary.Append("}");
 
             return parsedDictionary.ToString();
