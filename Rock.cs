@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zoo
 {
-    public class Rock
+    public class Rock : ISerializableObject
     {
         private int Weight;
 
@@ -30,9 +30,12 @@ namespace Zoo
             return this.Weight;
         }
 
-        public override string ToString()
+        public Dictionary<string, object> GetDictionary()
         {
-            return String.Format("Rock, Weight: {0} KG", this.GetWeight());
+            Dictionary<string, object> RockDictionary = new Dictionary<string, object>();
+            RockDictionary.Add("Weight", this.GetWeight());
+
+            return RockDictionary;
         }
     }
 }

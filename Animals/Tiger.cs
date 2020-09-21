@@ -60,5 +60,10 @@ namespace Zoo.Animals
 
             return TigerDictionary;
         }
+
+        public override string GetType()
+        {
+            return "Tiger";
+        }
     }
 }

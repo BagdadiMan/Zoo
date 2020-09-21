@@ -34,10 +34,14 @@ namespace Zoo.Animals
         public override Dictionary<string, object> GetDictionary()
         {
             Dictionary<string, object> SharkDictionary = base.GetDictionary();
-            SharkDictionary.Add("Type", this.GetType());
             SharkDictionary.Add("Is lawyer", this.GetIsLawyer());
 
             return SharkDictionary;
+        }
+
+        public override string GetType()
+        {
+            return "Shark";
         }
     }
 }

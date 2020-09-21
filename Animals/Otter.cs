@@ -28,9 +28,14 @@ namespace Zoo.Animals
         public override Dictionary<string, object> GetDictionary()
         {
             Dictionary<string, object> OtterDictionary = base.GetDictionary();
-            OtterDictionary.Add("Favorite rock", this.GetFavoriteRock().ToString());
+            OtterDictionary.Add("Favorite rock", this.GetFavoriteRock());
 
             return OtterDictionary;
+        }
+
+        public override string GetType()
+        {
+            return "Otter";
         }
     }
 }

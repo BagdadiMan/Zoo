@@ -8,16 +8,16 @@ namespace Zoo.Animals
 {
     public class Chameleon : Lizard
     {
-        private Color CurrentColor;
+        private string CurrentColor;
 
-        public Chameleon(string name, int age, Gender gender, string favoriteHuman, Color currentColor) : base(name, age, gender, favoriteHuman)
+        public Chameleon(string name, int age, Gender gender, string favoriteHuman, string currentColor) : base(name, age, gender, favoriteHuman)
         {
             SetColor(currentColor);
         }
 
-        public void SetColor(Color newColor) => this.CurrentColor = newColor;
+        public void SetColor(string newColor) => this.CurrentColor = newColor;
 
-        public Color GetCurrentColor()
+        public string GetCurrentColor()
         {
             return this.CurrentColor;
         }
@@ -25,9 +25,14 @@ namespace Zoo.Animals
         public override Dictionary<string, object> GetDictionary()
         {
             Dictionary<string, object> ChameleonDictionary = base.GetDictionary();
-            ChameleonDictionary.Add("Current color", this.GetCurrentColor().ToString());
+            ChameleonDictionary.Add("Current color", this.GetCurrentColor());
 
             return ChameleonDictionary;
+        }
+
+        public override string GetType()
+        {
+            return "Chameleon";
         }
     }
 }

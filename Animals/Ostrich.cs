@@ -37,5 +37,10 @@ namespace Zoo.Animals
 
             return OstrichDictionary;
         }
+
+        public override string GetType()
+        {
+            return "Ostrich";
+        }
     }
 }

@@ -67,9 +67,12 @@ namespace Zoo.Animals
             return this.FavoriteHuman;
         }
 
+        public abstract new String GetType();
+
         public virtual Dictionary<string, object> GetDictionary()
         {
             Dictionary<String, object> animalDictionary = new Dictionary<string, object>();
+            animalDictionary.Add("Type", this.GetType());
             animalDictionary.Add("Name", this.GetName());
             animalDictionary.Add("Age", this.GetAge());
             animalDictionary.Add("Gender", this.GetGender());
