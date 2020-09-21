@@ -8,18 +8,23 @@ namespace Zoo
 {
     class CsvSerializer : ISerializer
     {
-        private string path;
+        private string Path;
         private List<ISerializableObject> listToSerialize;
 
         public CsvSerializer(string path, List<ISerializableObject> listToSerialize)
         {
-            this.path = path;
+            this.Path = path;
             this.listToSerialize = listToSerialize;
         }
 
         public void SetPath(string path)
         {
-            this.path = path;
+            this.Path = path;
+        }
+
+        public string GetPath()
+        {
+            return this.Path;
         }
 
         public void SetListToSerialize(List<ISerializableObject> listToSerialize)
@@ -57,7 +62,7 @@ namespace Zoo
 
         public void Serialize()
         {
-            System.IO.File.WriteAllText(this.path + @"\Zoo.csv", this.ParseListToCSV(this.listToSerialize));
+            System.IO.File.WriteAllText(this.GetPath() + @"\Zoo.csv", this.ParseListToCSV(this.listToSerialize));
         }
     }
 }
