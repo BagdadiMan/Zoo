@@ -17,11 +17,6 @@ namespace Zoo.Animals
             SetTusksCount(tusksCount);
         }
 
-        public void AddTusk()
-        {
-            this.TusksCount++;
-        }
-
         public void RemoveTusk()
         {
             if(this.TusksCount <= 0)
@@ -42,6 +37,7 @@ namespace Zoo.Animals
             {
                 throw new ArgumentException("Tusks count has to be positive");
             }
+
             this.TusksCount = tusksCount;
         }
 
