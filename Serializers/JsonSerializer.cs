@@ -8,23 +8,23 @@ namespace Zoo
 {
     class JsonSerializer : ISerializer
     {
-        private string path;
-        private List<ISerializableObject> listToSerialize;
+        private string Path;
+        private List<ISerializableObject> ListToSerialize;
 
         public JsonSerializer(string path, List<ISerializableObject> listToSerialize)
         {
-            this.path = path;
-            this.listToSerialize = listToSerialize;
+            this.Path = path;
+            this.ListToSerialize = listToSerialize;
         }
 
         public void SetPath(string path)
         {
-            this.path = path;
+            this.Path = path;
         }
 
         public void SetListToSerialize(List<ISerializableObject> listToSerialize)
         {
-            this.listToSerialize = listToSerialize;
+            this.ListToSerialize = listToSerialize;
         }
 
         private string ParseListToJson(List<ISerializableObject> listToSerialize)
@@ -92,7 +92,7 @@ namespace Zoo
 
         public void Serialize()
         {
-            System.IO.File.WriteAllText(this.path + @"\Zoo.json", this.ParseListToJson(this.listToSerialize));
+            System.IO.File.WriteAllText(this.Path + @"\Zoo.json", this.ParseListToJson(this.ListToSerialize));
         }
     }
 }
